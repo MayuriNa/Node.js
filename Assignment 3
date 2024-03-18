@@ -1,0 +1,30 @@
+const file=require(&#39;fs&#39;); const write=()=&gt;{
+file.writeFile(&quot;test.txt&quot;,&quot;new updated content&quot;,err=&gt;{ if(err){
+console.log(err);
+}
+else{
+console.log(&quot;success&quot;);
+}
+})
+}
+
+const read=()=&gt;{
+file.readFile(&quot;test.txt&quot;,(err,data)=&gt;{ if(err){
+console.log(err);
+}
+else{
+console.log(data.toString());
+}
+})
+}
+const append=()=&gt;{
+file.appendFile(&quot;test.txt&quot;,&quot;append&quot;,(err,data)=&gt;{ if(err){
+console.log(err);
+}
+else{
+console.log(&quot;success&quot;);
+}
+})
+}
+write(); read();
+append();
